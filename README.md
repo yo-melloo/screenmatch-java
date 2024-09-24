@@ -1,3 +1,3 @@
 # screenmatch-java
 
-Olá Mundo!
+Olá Mundo! Sou um projeto de POO em Java.
