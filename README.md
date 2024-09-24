@@ -1,3 +1,3 @@
 # screenmatch-java
 
-Olá Mundo! Sou um projeto de POO em Java.
+Durante as aulas da formação back-end, é desenvolvido um "projeto" de Streaming de filmes.
