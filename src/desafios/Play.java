@@ -8,7 +8,7 @@ public class Play {
         Musica hinoNacional = new Musica();
         Musica lonelyDay = new Musica();
         Carro fiatUno = new Carro();
-        Aluno ciclano = new Aluno();
+        //Aluno ciclano = new Aluno();
 
         gustavo.nome = "Gustavo";
         gustavo.sobrenome = "Mello";
@@ -30,8 +30,8 @@ public class Play {
         fiatUno.modelo = "Fiat Uno";
         fiatUno.cor = "Prata";
 
-        ciclano.nome = "Ciclano da Silva";
-        ciclano.idade = 22;
+        /* ciclano.setNome("Ciclano da Silva");
+        ciclano.idade = 22; */
 
         gustavo.dizOi();
         fulano.dizOi();
@@ -49,7 +49,7 @@ public class Play {
         fiatUno.exibirFichaTecnica();
         System.out.println(fiatUno.idadeDoCarro(2024) + " anos.\n");
 
-        ciclano.exibirInformacoes();
+        //ciclano.exibirInformacoes();
 
     }
 }
