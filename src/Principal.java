@@ -1,14 +1,14 @@
+import br.com.mello.screenmatch.modelos.Filme;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
-        meuFilme.nome = "Star Wars";
-        meuFilme.anoDeLancamento = 1980;
-        meuFilme.duracaoEmMinutos = 180;
-        //meuFilme.avaliacao = 8.9;
-        //meuFilme.totalDeAvaliacoes = 1200;
-        meuFilme.incluidoNoPlano = true;
+        meuFilme.setNome("Star Wars");
+        meuFilme.setAnoDeLancamento(1980);
+        meuFilme.setDuracaoEmMinutos(180);
 
-        // Total de Avaliações: 5 - Nota Final: 27 (confere)
+        meuFilme.setIncluidoNoPlano(true);
+
         meuFilme.avalia(3);
         meuFilme.avalia(5);
         meuFilme.avalia(7);
@@ -17,7 +17,6 @@ public class Principal {
 
         meuFilme.exibeFichaTecnica();
 
-        //System.out.println(meuFilme.pegaMedia());
 
     }
 }
