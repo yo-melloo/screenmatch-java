@@ -18,5 +18,17 @@
 >- **Flexibilizar**, permitindo mudanças internas na classe sem afetar as classes que a utilizam.
 >- **Manter**, facilitando a manutenção ao limitar a interação entre as classes.
 
+- ### [Segunda-Feira, 30/09/2024]
+> **"@Override"** possibilita **sobreescrever** algum método herdado:
+> ``` java
+> @Override 
+> public int getDuracaoEmMinutos() { 
+>     return super.getDuracaoEmMinutos(); 
+> }
+> ```
+
+> - O **polimorfismo** é a capacidade de objetos de diferentes classes responderem de forma diferente à mesma mensagem.
+> Isso permite que um objeto se comporte de maneiras diversas, dependendo do contexto.
+> O polimorfismo é um conceito fundamental na POO e pode ser útil para criar modelos de dados flexíveis e reutilizáveis.
 
 ***
