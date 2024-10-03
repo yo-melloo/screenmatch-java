@@ -7,7 +7,7 @@ public class Play {
         Calculadora calculadora = new Calculadora();
         Musica hinoNacional = new Musica();
         Musica lonelyDay = new Musica();
-        Carro fiatUno = new Carro();
+        //Carro fiatUno = new Carro();
         //Aluno ciclano = new Aluno();
 
         gustavo.nome = "Gustavo";
@@ -26,10 +26,6 @@ public class Play {
         lonelyDay.anoLancamento = 2005;
         lonelyDay.album = "Hypnotize";
 
-        fiatUno.ano = 2004;
-        fiatUno.modelo = "Fiat Uno";
-        fiatUno.cor = "Prata";
-
         /* ciclano.setNome("Ciclano da Silva");
         ciclano.idade = 22; */
 
@@ -46,8 +42,6 @@ public class Play {
         lonelyDay.avaliarEm(9.5);
         lonelyDay.exibirFichaTecnica();
 
-        fiatUno.exibirFichaTecnica();
-        System.out.println(fiatUno.idadeDoCarro(2024) + " anos.\n");
 
         //ciclano.exibirInformacoes();
 

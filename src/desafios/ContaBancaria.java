@@ -1,13 +1,13 @@
 package desafios;
 
+import java.sql.SQLOutput;
+
 public class ContaBancaria {
 
+
     private int numeroConta;
-    private double saldo;
+    protected double saldo;
     public String titular;
-
-
-    // Implemente métodos getters e setters para os atributos privados.
 
 
     public void setNumeroConta(int numeroConta) {
@@ -27,7 +27,11 @@ public class ContaBancaria {
     }
 
     public void sacar(double saque){
+        double preSaldo = saldo;
         saldo -= saque;
+
+        System.out.printf("Sacando R$ %.2f %n", saque);
+        System.out.printf("Saldo: R$ %.2f --> R$ %.2f %n", preSaldo, saldo);
     }
 
     public void depositar(double deposito){
@@ -38,7 +42,8 @@ public class ContaBancaria {
         return saldo;
     }
 
-    public static void main(String[] args) {
+    /*
+        public static void main(String[] args) {
         ContaBancaria conta1 = new ContaBancaria();
 
         conta1.setNumeroConta(1234);
@@ -51,4 +56,15 @@ public class ContaBancaria {
         System.out.println(conta1.getSaldo());
 
     }
+    */
+
+    public void consultarSaldo(){
+        System.out.printf("""
+                Titular: %s
+                Número da Conta: %s
+                Saldo: R$ %.2f
+                Tipo da Conta: Conta Corrente
+                """, titular,numeroConta,saldo);
+    }
+
 }
