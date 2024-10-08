@@ -1,5 +1,7 @@
 package br.com.mello.screenmatch.modelos;
 
+import br.com.mello.screematch.calculo.Classificavel;
+
 public class Serie extends Titulo {
     private int temporadas;
     private boolean ativa;

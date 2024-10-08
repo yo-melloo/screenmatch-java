@@ -40,23 +40,23 @@ public class Titulo {
         return duracaoEmMinutos;
     }
 
+    public double pegaMedia(){
+        return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
 
     //"Void siginifica que este métodoi não possui algum retorno"
     public void exibeFichaTecnica(){
         System.out.println("Nome do filme: " + nome);
         System.out.println("Duração: " + duracaoEmMinutos + "min.");
         System.out.println("Ano de lançamento: " + anoDeLancamento);
-        System.out.printf("Avaliação: %.2f * (%s avaliações) %n", (somaDasAvaliacoes / totalDeAvaliacoes), totalDeAvaliacoes);
+        System.out.printf("Avaliação: %s Estrelas (%s avaliações) %n", (int) pegaMedia(), totalDeAvaliacoes);
 
     }
 
     public void avalia(double nota){
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes ++;
-    }
-
-    public double pegaMedia(){
-        return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
 
