@@ -1,3 +1,5 @@
+package br.com.mello.screenmatch.principal;
+
 import br.com.mello.screematch.calculo.CalculadoraDeTempo;
 import br.com.mello.screematch.calculo.FiltroRecomendacao;
 import br.com.mello.screenmatch.modelos.Episodio;
