@@ -5,8 +5,9 @@ import br.com.mello.screenmatch.modelos.Serie;
 import br.com.mello.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class PrincipalComListas {
+public class  PrincipalComListas {
     public static void main(String[] args) {
         Filme favorito = new Filme("Matrix", 2002);
         favorito.avalia(9.5);
@@ -32,6 +33,11 @@ public class PrincipalComListas {
         }
 
         // printar nome do Titulo, e classificação se for um filme com nota maior que 2
+
+        System.out.println(lista);
+        System.out.println("Organizando alfabeticamente...");
+        Collections.sort(lista);
+        System.out.println(lista);
 
     }
 }

@@ -1,6 +1,6 @@
 package br.com.mello.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -8,50 +8,50 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public Titulo (String nome, int anoDeLancamento){
+    public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getNome(){
+    public String getNome() {
         return this.nome;
     }
 
-    public void setAnoDeLancamento(int anoDeLancamento){
+    public void setAnoDeLancamento(int anoDeLancamento) {
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public int getAnoDeLancamento(){
+    public int getAnoDeLancamento() {
         return anoDeLancamento;
     }
 
-    public void setIncluidoNoPlano(boolean incluidoNoPlano){
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public boolean getIncluidoNoPlano(){
+    public boolean getIncluidoNoPlano() {
         return incluidoNoPlano;
     }
 
-    public void setDuracaoEmMinutos(int duracaoEmMinutos){
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public int getDuracaoEmMinutos(){
+    public int getDuracaoEmMinutos() {
         return duracaoEmMinutos;
     }
 
-    public double pegaMedia(){
+    public double pegaMedia() {
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
 
     //"Void siginifica que este métodoi não possui algum retorno"
-    public void exibeFichaTecnica(){
+    public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Duração: " + duracaoEmMinutos + "min.");
         System.out.println("Ano de lançamento: " + anoDeLancamento);
@@ -59,10 +59,14 @@ public class Titulo {
 
     }
 
-    public void avalia(double nota){
+    public void avalia(double nota) {
         somaDasAvaliacoes += nota;
-        totalDeAvaliacoes ++;
+        totalDeAvaliacoes++;
     }
 
 
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 }
