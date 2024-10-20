@@ -20,9 +20,4 @@ public class Filme extends Titulo implements Classificavel {
     public int getClassificacao(){
         return (int) pegaMedia();
     }
-
-    @Override
-    public String toString() {
-        return this.getNome();
-    }
 }
