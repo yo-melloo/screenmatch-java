@@ -1,6 +1,8 @@
 package br.com.mello.screenmatch.principal;
 
 import br.com.mello.screenmatch.modelos.Titulo;
+import br.com.mello.screenmatch.modelos.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.HttpServer;
@@ -15,7 +17,9 @@ import java.util.Scanner;
 public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner entrada = new Scanner(System.in);
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
 
         System.out.print("Digite o nome do filme qual deseja pesquisar: ");
         String filme = entrada.nextLine();
@@ -32,8 +36,9 @@ public class PrincipalComBusca {
         String jsonResponse = response.body();
         //System.out.println(jsonResponse);
 
-        Titulo tituloResultado = gson.fromJson(jsonResponse, Titulo.class);
-        System.out.println(tituloResultado);
+        TituloOmdb tituloResultado = gson.fromJson(jsonResponse, TituloOmdb.class);
+        Titulo tituloResultadoFinal = new Titulo(tituloResultado);
+        System.out.println(tituloResultadoFinal);
     }
 
 }
