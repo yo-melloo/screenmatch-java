@@ -1,5 +1,6 @@
 package br.com.mello.screenmatch.principal;
 
+import br.com.mello.screenmatch.excecoes.ExcecaoDeConversaoDeAno;
 import br.com.mello.screenmatch.modelos.Titulo;
 import br.com.mello.screenmatch.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -22,23 +23,37 @@ public class PrincipalComBusca {
                 .create();
 
         System.out.print("Digite o nome do filme qual deseja pesquisar: ");
-        String filme = entrada.nextLine();
-        String API_KEY = "1a6bcfd8";
+        String filme = entrada.nextLine().replace(" ", "%20");
+        //System.out.println("String pesquisa: " + filme);
+        String API_KEY = "1a6bcfd8"; // ainda não sei usar .env em Java XDDDD
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(String.format("http://www.omdbapi.com/?apikey=%s&t=%s", API_KEY, filme)))
-                .build();
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(String.format("http://www.omdbapi.com/?apikey=%s&t=%s", API_KEY, filme)))
+                    .build();
 
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-        String jsonResponse = response.body();
-        //System.out.println(jsonResponse);
+            String jsonResponse = response.body();
+            //System.out.println("Resposta da API: " + jsonResponse);
 
-        TituloOmdb tituloResultado = gson.fromJson(jsonResponse, TituloOmdb.class);
-        Titulo tituloResultadoFinal = new Titulo(tituloResultado);
-        System.out.println(tituloResultadoFinal);
+            TituloOmdb tituloResultado = gson.fromJson(jsonResponse, TituloOmdb.class);
+            Titulo tituloResultadoFinal = new Titulo(tituloResultado);
+            System.out.println(tituloResultadoFinal);
+        } catch (NumberFormatException e) {
+            System.out.println("Ocorreu um erro.");
+            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ocorreu um erro.\n Há um problema no endereço de pesquisa, verifique o nome do filme digitado.");
+            System.out.println(e.getMessage());
+        } catch (ExcecaoDeConversaoDeAno e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Encerrando programa...");
+
     }
 
 }
