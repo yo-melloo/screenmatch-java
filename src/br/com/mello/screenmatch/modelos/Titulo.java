@@ -1,8 +1,10 @@
 package br.com.mello.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
-    private String nome;
-    private int anoDeLancamento;
+    @SerializedName("Title") private String nome;
+    @SerializedName("Year") private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;

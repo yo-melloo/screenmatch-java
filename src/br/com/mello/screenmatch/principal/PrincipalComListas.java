@@ -3,6 +3,7 @@ package br.com.mello.screenmatch.principal;
 import br.com.mello.screenmatch.modelos.Filme;
 import br.com.mello.screenmatch.modelos.Serie;
 import br.com.mello.screenmatch.modelos.Titulo;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collections;
